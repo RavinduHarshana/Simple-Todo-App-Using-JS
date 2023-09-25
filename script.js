@@ -49,9 +49,11 @@ function renderlist() {
   let task = todos.map(function (item) {
     return `<div class="taskcard">
 
-    ${item.title} 
-    ${item.tdate} 
-    ${item.ttime} 
+   <div class="data"> 
+   <div class="taskn"><p>${item.title}<p> </div>
+    <div class="taskd">${item.tdate} </div>
+   <div class"tasktm"> ${item.ttime}</div>
+    </div>
     <button onclick="deleteI(${item.id})">Delete</button>
     </div>`;
   });
