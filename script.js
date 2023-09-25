@@ -42,7 +42,7 @@ renderlist();
 function renderlist() {
   for(let i=0;i<todos.length;i++){
     todos[i].id=i;
-    console.log(todos[i].id);
+    console.log(todos[i]);
   }
 
   
@@ -58,7 +58,7 @@ function renderlist() {
 
   let alltodo = task.reduce(function (total, curr) {
     return total + curr;
-  });
+  },"");
   alltask.innerHTML = alltodo;
 }
 
