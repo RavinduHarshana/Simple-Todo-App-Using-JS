@@ -27,7 +27,6 @@ function dayc() {
 setInterval(timec, 1000);
 setInterval(dayc, 1000);
 
-
 let tasktext = document.getElementById("Taskinput");
 let taskdate = document.getElementById("taskdate");
 let tasktime = document.getElementById("tasktime");
@@ -40,27 +39,25 @@ todos = JSON.parse(localStorage.getItem("todos") || []);
 renderlist();
 
 function renderlist() {
-  for(let i=0;i<todos.length;i++){
-    todos[i].id=i;
+  for (let i = 0; i < todos.length; i++) {
+    todos[i].id = i;
     console.log(todos[i]);
   }
 
-  
   let task = todos.map(function (item) {
     return `<div class="taskcard">
-
    <div class="data"> 
    <div class="taskn"><p>${item.title}<p> </div>
-    <div class="taskd">${item.tdate} </div>
+    <div class="taskd"><p>${item.tdate}</p> </div>
    <div class"tasktm"> ${item.ttime}</div>
     </div>
-    <button onclick="deleteI(${item.id})">Delete</button>
+    <button onclick="deleteI(${item.id})" class="done">DONE</button>
     </div>`;
   });
 
   let alltodo = task.reduce(function (total, curr) {
     return total + curr;
-  },"");
+  }, "");
   alltask.innerHTML = alltodo;
 }
 
@@ -83,7 +80,7 @@ function addtask() {
     alert("Please enter  Task name");
   } else {
     let todo = {
-      id: todos.length+1,
+      id: todos.length + 1,
       title: tasktext.value,
       tdate: taskdate.value,
       ttime: tasktime.value,
@@ -95,8 +92,6 @@ function addtask() {
     renderlist();
     savelocal();
   }
- 
+
   // console.log(todos);
-
 }
-

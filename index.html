@@ -19,14 +19,22 @@
                 <p id="dat"></p>
                 <p id="time"></p>
             </div>
-            
-            <div class="taskfield">
-                <input type="text" class="tinput" id="Taskinput">
-                <input type="date" name="date" id="taskdate">
-                <input type="time" name="tasktime" id="tasktime">
-                <button onclick="addtask()">Add</button>
+            <div class="inp">
+
+                <div class="taskin">
+                    <input type="text" class="tinput" id="Taskinput" placeholder="Enter Your Task">
+                    <button onclick="addtask()" class="addbtn">Add</button>
+                </div>
+
+                <div class="dt">
+
+                    <input type="date" name="date" id="taskdate">
+                    <input type="time" name="tasktime" id="tasktime" placeholder="Date">
+                </div>
             </div>
-            <div id="allitem"></div>
+            <div id="allitem">
+                
+            </div>
         </div>
     </div>
 
